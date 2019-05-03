@@ -40,61 +40,61 @@ Passwort: __Modul300*__
 ## Git-Hub Account erstellen
 Als erstes besucht man die Webseite https://github.com/. Anschliessend wählt man oben rechts das Feld *Sign Up*. Wenn das getan ist, kann man nun seine Daten eingeben und einen Account für Git-Hub erstellen.
 
-![Git-Hub Account](screenshots/githubsignup.PNG)
+![Git-Hub Account](lb2_screenshots/githubsignup.PNG)
 
 # Web-Server Installation mit Vagrant
 ## Vagrantfile
 Das Vagrantfile dient der Konfiguration der VM, bevor man sie das erste Mal aufstartet.
 
-![Vagrantfile](screenshots/vagrantfile.PNG)
+![Vagrantfile](lb2_screenshots/vagrantfile.PNG)
 
 ## Neuer Sudo User erstellen
 Um das Usererstellen auszuprobieren habe ich einen neue Sudo User erstellt. Dies ging ganz einfach mit dem Kommando `sudo adduser m300admin`. "m300admin" ist dabei der Username. Anschliessend wird man noch nach einem Passwort gefragt. Dabei habe ich wieder dasselbe verwendet wie immer.
 
-![NeuerSudoUser1](screenshots/usererstellen1.PNG)
+![NeuerSudoUser1](lb2_screenshots/usererstellen1.PNG)
 
 Anschliessend benötigt der neue erstellte User noch die Berechtigungen um die Rolle als SuperUser zu erfüllen. Dies gint mit dem Kommando `sudo usermod -aG sudo testuser`
 
-![NeuerSudoUser2](screenshots/usererstellen2.PNG)
+![NeuerSudoUser2](lb2_screenshots/usererstellen2.PNG)
 
 ### Sudo User testen
 
 Um zu überprüfen, dass der neu erstellte User auch die richtigen Berechtigunen hat, habe ich mich auf ihm eingeloggt. Ganz einfach mit dem Befehl `su - testuser`. Und dann auf dem neuen Benutzer ein Befehl mit `sudo` ausgeführt. In diesem Fall habe ich die nummerierte Firewall-Regel Tabelle abgerufen. Weiter unten (im Bild) sieht man, dass der Befehl ohne `sudo` nicht funktioniert.
 
-![NeuerSudoUserTest](screenshots/usertesten.PNG)
+![NeuerSudoUserTest](lb2_screenshots/usertesten.PNG)
 
 ## Firewall Regeln
 
 Ich habe mich für folgende Firewall Regeln entschieden. Diese hatten keinen besonderen Grund, einfach, dass ich beim installieren auf keine Probleme stosse.
 
-![FirewallRegeln](screenshots/ubuntufirewall.PNG)
+![FirewallRegeln](lb2_screenshots/ubuntufirewall.PNG)
 
 ## SSH Key erstellen
 
 Mit folgendem Befehl habe ich einen SSH Key erstellt um den abgesicherten SSH Zugriff zu sichern.
 
-![SSHkeygen](screenshots/newsshkey.PNG)
+![SSHkeygen](lb2_screenshots/newsshkey.PNG)
 
 ## MySQL, PhP und PhPMyAdmin Installation
 MySQL installieren.
 
-![SSHkeygen](screenshots/installmysql.PNG)
+![SSHkeygen](lb2_screenshots/installmysql.PNG)
 
 PhP installieren.
 
-![SSHkeygen](screenshots/installphp.PNG)
+![SSHkeygen](lb2_screenshots/installphp.PNG)
 
 phpmyadmin installieren.
 
-![SSHkeygen](screenshots/installphpmyadmin.PNG)
+![SSHkeygen](lb2_screenshots/installphpmyadmin.PNG)
 
 Damit die index.php Seite über dem Apache2-Index priorisiert wird, muss man das dir.conf File so anpassen, dass in der zweiten Zeile index.php vor index.html vorkommt.
 
-![SSHkeygen](screenshots/editdirconf2.PNG)
+![SSHkeygen](lb2_screenshots/editdirconf2.PNG)
 
 Als letztes muss man noch die phpmyadmin mods installieren.
 
-![SSHkeygen](screenshots/enablephpmyadminmods.PNG)
+![SSHkeygen](lb2_screenshots/enablephpmyadminmods.PNG)
 
 # Vagrant Box Release
 
@@ -102,7 +102,7 @@ Nachdem alle Services auf dem Server installiert wurden kann man mithilfe des co
 
 Anschliessend muss man sich bei https://vagrantcloud.com anmelden und den Button "Create a new Vagrant Box" anwählen. Darin folgt man den einzelnen Schritten. Beim Feld "Provider" wählt man "virtualbox" aus, da alles auf dieser Software aufgesetzt wurde. Anschliessend kann man das eben erstellte .box File hochladen und die Vagrant Box Releasen.
 
-![VagrantBoxRelease](screenshots/vagrantcloudrelease.PNG)
+![VagrantBoxRelease](lb2_screenshots/vagrantcloudrelease.PNG)
 
 # Docker
 Docker ist ein Programm, das für die Containerisierung genutzt wird. Wenn man das Docker paket herunterlädt bekommt man man einige Features mitinstalliert die man ebenfalls nutzen kann. Docker liefert ein ganzes Set an neuen Kommandos die man sowohl auf der Kommandozeile als auch in Skripts und im Dockerfile nutzen kann. Es hat sehr viele Ähnlichkeiten zu Vagrant. Der grosse unterschied ist nur, dass Vagrant zur Virtualisierung genutzt wird.
